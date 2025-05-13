@@ -160,7 +160,7 @@ export default function PricingSection() {
 
           {/* Premium Tier */}
           <div
-            className={`rounded-2xl relative transition-all duration-1000 transform ${
+            className={`rounded-2xl relative transition-all duration-1000 transform h-full ${
               isVisible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-10 opacity-0"
@@ -170,7 +170,7 @@ export default function PricingSection() {
             {/* Glow effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-amber-600 rounded-2xl blur opacity-30"></div>
 
-            <div className="relative rounded-2xl border border-yellow-500/30 bg-zinc-900/50 backdrop-blur-sm overflow-hidden">
+            <div className="relative rounded-2xl border border-yellow-500/30 bg-zinc-900/50 backdrop-blur-sm overflow-hidden h-full">
               <div className="absolute top-0 right-0">
                 <div className="bg-gradient-to-r from-yellow-400 to-amber-600 text-black text-xs font-bold px-4 py-1 rounded-bl-lg">
                   MOST POPULAR
@@ -235,9 +235,6 @@ export default function PricingSection() {
               </div>
 
               {/* Animated corner accent */}
-              <div className="absolute bottom-0 left-0 w-16 h-16 overflow-hidden">
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-yellow-400 to-amber-600 rotate-45 transform origin-bottom-left -translate-y-12 -translate-x-12 group-hover:translate-y-0 group-hover:translate-x-0 transition-transform duration-500"></div>
-              </div>
             </div>
           </div>
         </div>
