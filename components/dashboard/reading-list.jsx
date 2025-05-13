@@ -1,11 +1,23 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Clock, Bookmark, MessageSquare, ThumbsUp, Sparkles, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useState } from "react";
+import {
+  Clock,
+  Bookmark,
+  MessageSquare,
+  ThumbsUp,
+  Sparkles,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/landing/card";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ARTICLES = [
   {
@@ -18,7 +30,12 @@ const ARTICLES = [
     image: "/placeholder.svg?height=100&width=200",
     readTime: "8 min read",
     date: "3 hours ago",
-    aiHighlights: ["remote work trends", "productivity tools", "team collaboration", "hybrid models"],
+    aiHighlights: [
+      "remote work trends",
+      "productivity tools",
+      "team collaboration",
+      "hybrid models",
+    ],
   },
   {
     id: 2,
@@ -30,7 +47,12 @@ const ARTICLES = [
     image: "/placeholder.svg?height=100&width=200",
     readTime: "6 min read",
     date: "Yesterday",
-    aiHighlights: ["quantum computing", "data encryption", "cybersecurity", "quantum supremacy"],
+    aiHighlights: [
+      "quantum computing",
+      "data encryption",
+      "cybersecurity",
+      "quantum supremacy",
+    ],
   },
   {
     id: 3,
@@ -42,27 +64,35 @@ const ARTICLES = [
     image: "/placeholder.svg?height=100&width=200",
     readTime: "5 min read",
     date: "2 days ago",
-    aiHighlights: ["gut microbiome", "mental health", "probiotics", "brain function"],
+    aiHighlights: [
+      "gut microbiome",
+      "mental health",
+      "probiotics",
+      "brain function",
+    ],
   },
-]
+];
 
 export function ReadingList() {
-  const [savedArticles, setSavedArticles] = useState([])
+  const [savedArticles, setSavedArticles] = useState([]);
 
   const toggleSave = (id) => {
     if (savedArticles.includes(id)) {
-      setSavedArticles(savedArticles.filter((articleId) => articleId !== id))
+      setSavedArticles(savedArticles.filter((articleId) => articleId !== id));
     } else {
-      setSavedArticles([...savedArticles, id])
+      setSavedArticles([...savedArticles, id]);
     }
-  }
+  };
 
   return (
     <Card className="bg-zinc-900/50 border-zinc-800">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
           <CardTitle className="text-xl">Your Reading List</CardTitle>
-          <Button variant="ghost" className="text-zinc-400 hover:text-yellow-500 group">
+          <Button
+            variant="ghost"
+            className="text-zinc-400 hover:text-yellow-500 group"
+          >
             <span>View All</span>
             <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
@@ -71,13 +101,22 @@ export function ReadingList() {
       <CardContent>
         <Tabs defaultValue="recommended">
           <TabsList className="bg-zinc-950 border border-zinc-800 mb-6">
-            <TabsTrigger value="recommended" className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white">
+            <TabsTrigger
+              value="recommended"
+              className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white"
+            >
               Recommended
             </TabsTrigger>
-            <TabsTrigger value="saved" className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white">
+            <TabsTrigger
+              value="saved"
+              className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white"
+            >
               Saved
             </TabsTrigger>
-            <TabsTrigger value="history" className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white">
+            <TabsTrigger
+              value="history"
+              className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white"
+            >
               History
             </TabsTrigger>
           </TabsList>
@@ -96,7 +135,9 @@ export function ReadingList() {
           <TabsContent value="saved" className="mt-0">
             {savedArticles.length > 0 ? (
               <div className="space-y-4">
-                {ARTICLES.filter((article) => savedArticles.includes(article.id)).map((article) => (
+                {ARTICLES.filter((article) =>
+                  savedArticles.includes(article.id)
+                ).map((article) => (
                   <ArticleCard
                     key={article.id}
                     article={article}
@@ -110,7 +151,8 @@ export function ReadingList() {
                 <Bookmark className="h-12 w-12 text-zinc-700 mx-auto mb-3" />
                 <h3 className="text-lg font-medium mb-1">No saved articles</h3>
                 <p className="text-zinc-500 text-sm max-w-md mx-auto">
-                  Articles you save will appear here for easy access. Start saving articles you want to read later.
+                  Articles you save will appear here for easy access. Start
+                  saving articles you want to read later.
                 </p>
               </div>
             )}
@@ -121,18 +163,19 @@ export function ReadingList() {
               <Clock className="h-12 w-12 text-zinc-700 mx-auto mb-3" />
               <h3 className="text-lg font-medium mb-1">Reading history</h3>
               <p className="text-zinc-500 text-sm max-w-md mx-auto">
-                Articles you've read will appear here. You haven't read any articles yet.
+                Articles you've read will appear here. You haven't read any
+                articles yet.
               </p>
             </div>
           </TabsContent>
         </Tabs>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 function ArticleCard({ article, isSaved, onToggleSave }) {
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <div className="rounded-lg border border-zinc-800 overflow-hidden hover:border-zinc-700 transition-colors group">
@@ -146,13 +189,21 @@ function ArticleCard({ article, isSaved, onToggleSave }) {
           <div
             className="absolute inset-0 bg-gradient-to-br opacity-40 mix-blend-overlay"
             style={{
-              backgroundImage: `linear-gradient(to bottom right, ${article.categoryColor.split(" ")[0].replace("from-", "")}, ${article.categoryColor.split(" ")[1].replace("to-", "")})`,
+              backgroundImage: `linear-gradient(to bottom right, ${article.categoryColor
+                .split(" ")[0]
+                .replace("from-", "")}, ${article.categoryColor
+                .split(" ")[1]
+                .replace("to-", "")})`,
             }}
           ></div>
           <Badge
             className="absolute top-2 left-2 bg-gradient-to-r text-black text-xs"
             style={{
-              backgroundImage: `linear-gradient(to right, ${article.categoryColor.split(" ")[0].replace("from-", "")}, ${article.categoryColor.split(" ")[1].replace("to-", "")})`,
+              backgroundImage: `linear-gradient(to right, ${article.categoryColor
+                .split(" ")[0]
+                .replace("from-", "")}, ${article.categoryColor
+                .split(" ")[1]
+                .replace("to-", "")})`,
             }}
           >
             {article.category}
@@ -167,7 +218,11 @@ function ArticleCard({ article, isSaved, onToggleSave }) {
             <Button
               variant="ghost"
               size="icon"
-              className={`h-8 w-8 flex-shrink-0 ${isSaved ? "text-yellow-500" : "text-zinc-500 hover:text-yellow-500"}`}
+              className={`h-8 w-8 flex-shrink-0 ${
+                isSaved
+                  ? "text-yellow-500"
+                  : "text-zinc-500 hover:text-yellow-500"
+              }`}
               onClick={onToggleSave}
             >
               <Bookmark className="h-4 w-4" />
@@ -183,13 +238,17 @@ function ArticleCard({ article, isSaved, onToggleSave }) {
             <span>{article.date}</span>
           </div>
 
-          <p className="text-sm text-zinc-400 mb-3 line-clamp-2">{article.description}</p>
+          <p className="text-sm text-zinc-400 mb-3 line-clamp-2">
+            {article.description}
+          </p>
 
           {expanded && (
             <div className="mb-3 mt-1">
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="h-3 w-3 text-yellow-500" />
-                <span className="text-xs font-medium text-yellow-500">AI Highlights</span>
+                <span className="text-xs font-medium text-yellow-500">
+                  AI Highlights
+                </span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {article.aiHighlights.map((highlight, index) => (
@@ -206,11 +265,19 @@ function ArticleCard({ article, isSaved, onToggleSave }) {
 
           <div className="mt-auto flex items-center justify-between">
             <div className="flex gap-2">
-              <Button variant="ghost" size="sm" className="h-8 text-zinc-500 hover:text-zinc-300">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="h-8 text-zinc-500 hover:text-zinc-300"
+              >
                 <ThumbsUp className="h-3 w-3 mr-1" />
                 <span className="text-xs">24</span>
               </Button>
-              <Button variant="ghost" size="sm" className="h-8 text-zinc-500 hover:text-zinc-300">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="h-8 text-zinc-500 hover:text-zinc-300"
+              >
                 <MessageSquare className="h-3 w-3 mr-1" />
                 <span className="text-xs">8</span>
               </Button>
@@ -228,5 +295,5 @@ function ArticleCard({ article, isSaved, onToggleSave }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

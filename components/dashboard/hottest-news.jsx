@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 import {
   ArrowRight,
   Clock,
@@ -16,11 +16,11 @@ import {
   User,
   Building,
   MapPin,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/landing/card";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const CATEGORIES = [
   {
@@ -31,7 +31,8 @@ const CATEGORIES = [
     articles: [
       {
         id: 1,
-        title: "AI Breakthrough: New Model Understands Context Better Than Ever",
+        title:
+          "AI Breakthrough: New Model Understands Context Better Than Ever",
         description:
           "Researchers have developed a new AI model that can understand context in conversations with unprecedented accuracy, opening new possibilities for human-computer interaction.",
         image: "/placeholder.svg?height=200&width=400",
@@ -46,11 +47,17 @@ const CATEGORIES = [
         ],
         summary:
           "A new AI model developed by researchers shows 40% better contextual understanding compared to previous models. The breakthrough uses a novel neural architecture that processes conversational context more effectively, potentially revolutionizing virtual assistants and customer service bots.",
-        keywords: ["AI model", "contextual understanding", "neural architecture", "virtual assistants"],
+        keywords: [
+          "AI model",
+          "contextual understanding",
+          "neural architecture",
+          "virtual assistants",
+        ],
       },
       {
         id: 2,
-        title: "Quantum Computing Reaches New Milestone With 1000-Qubit Processor",
+        title:
+          "Quantum Computing Reaches New Milestone With 1000-Qubit Processor",
         description:
           "Scientists announce the development of the first 1000-qubit quantum processor, marking a significant step toward practical quantum computing applications.",
         image: "/placeholder.svg?height=200&width=400",
@@ -92,7 +99,12 @@ const CATEGORIES = [
         ],
         summary:
           "Global markets showed varied responses to the $1.9 trillion stimulus package. Asian markets rose by 2.3% on average, while European markets remained flat. Analysts cite inflation concerns as the main factor for cautious European trading despite positive economic indicators.",
-        keywords: ["stimulus package", "global markets", "inflation concerns", "economic indicators"],
+        keywords: [
+          "stimulus package",
+          "global markets",
+          "inflation concerns",
+          "economic indicators",
+        ],
       },
       {
         id: 2,
@@ -111,7 +123,12 @@ const CATEGORIES = [
         ],
         summary:
           "NeuralTech has raised $500 million in Series C funding led by Sequoia Capital, valuing the company at $3.2 billion. The AI startup plans to use the funds to expand its machine learning platform and enter new markets in Europe and Asia.",
-        keywords: ["Series C funding", "AI startup", "venture capital", "machine learning"],
+        keywords: [
+          "Series C funding",
+          "AI startup",
+          "venture capital",
+          "machine learning",
+        ],
       },
     ],
   },
@@ -138,7 +155,12 @@ const CATEGORIES = [
         ],
         summary:
           "MIT researchers have developed a new type of battery using sustainable materials that can store renewable energy for up to 30 days with minimal loss. The technology could solve the intermittency problem of solar and wind power, making renewable energy more reliable for grid applications.",
-        keywords: ["renewable energy", "battery technology", "energy storage", "sustainability"],
+        keywords: [
+          "renewable energy",
+          "battery technology",
+          "energy storage",
+          "sustainability",
+        ],
       },
       {
         id: 2,
@@ -157,7 +179,12 @@ const CATEGORIES = [
         ],
         summary:
           "Astronomers using the James Webb Space Telescope have discovered an Earth-sized exoplanet in the habitable zone of Proxima Centauri, just 4.2 light-years away. Initial spectroscopic analysis suggests the presence of water vapor in its atmosphere, making it a prime target for future studies.",
-        keywords: ["exoplanet", "habitable zone", "James Webb Telescope", "Proxima Centauri"],
+        keywords: [
+          "exoplanet",
+          "habitable zone",
+          "James Webb Telescope",
+          "Proxima Centauri",
+        ],
       },
     ],
   },
@@ -184,7 +211,12 @@ const CATEGORIES = [
         ],
         summary:
           "A large-scale study following 2,000 participants over 5 years found that intermittent fasting protocols reduced inflammatory markers by 40% and improved insulin sensitivity. The research suggests that time-restricted eating patterns may be more important than caloric restriction for certain health benefits.",
-        keywords: ["intermittent fasting", "metabolic health", "inflammation", "insulin sensitivity"],
+        keywords: [
+          "intermittent fasting",
+          "metabolic health",
+          "inflammation",
+          "insulin sensitivity",
+        ],
       },
       {
         id: 2,
@@ -203,17 +235,22 @@ const CATEGORIES = [
         ],
         summary:
           "Johns Hopkins researchers have discovered a previously unknown mechanism that contributes to the formation of amyloid plaques in Alzheimer's disease. The finding has led to a new experimental drug that reduced plaque formation by 65% in animal models, with human trials scheduled to begin next year.",
-        keywords: ["Alzheimer's disease", "amyloid plaques", "neurodegeneration", "clinical trials"],
+        keywords: [
+          "Alzheimer's disease",
+          "amyloid plaques",
+          "neurodegeneration",
+          "clinical trials",
+        ],
       },
     ],
   },
-]
+];
 
 export function HottestNews() {
-  const [activeTab, setActiveTab] = useState(CATEGORIES[0].id)
-  const [expandedArticle, setExpandedArticle] = useState(null)
+  const [activeTab, setActiveTab] = useState(CATEGORIES[0].id);
+  const [expandedArticle, setExpandedArticle] = useState(null);
 
-  const activeCategory = CATEGORIES.find((cat) => cat.id === activeTab)
+  const activeCategory = CATEGORIES.find((cat) => cat.id === activeTab);
 
   return (
     <section className="space-y-6">
@@ -223,11 +260,18 @@ export function HottestNews() {
             <TrendingUp className="h-5 w-5 text-yellow-500" />
             <h2 className="text-2xl font-bold">Today's Hottest News</h2>
           </div>
-          <p className="text-zinc-400">Top stories from your selected categories</p>
+          <p className="text-zinc-400">
+            Top stories from your selected categories
+          </p>
         </div>
       </div>
 
-      <Tabs defaultValue={CATEGORIES[0].id} value={activeTab} onValueChange={setActiveTab} className="w-full">
+      <Tabs
+        defaultValue={CATEGORIES[0].id}
+        value={activeTab}
+        onValueChange={setActiveTab}
+        className="w-full"
+      >
         <TabsList className="bg-zinc-900/50 border border-zinc-800 p-1 mb-6">
           {CATEGORIES.map((category) => (
             <TabsTrigger
@@ -235,7 +279,11 @@ export function HottestNews() {
               value={category.id}
               className="data-[state=active]:bg-gradient-to-r data-[state=active]:text-black data-[state=active]:shadow-none data-[state=inactive]:text-zinc-400 data-[state=inactive]:hover:text-white"
               style={{
-                backgroundImage: `linear-gradient(to right, ${category.color.split(" ")[0].replace("from-", "")}, ${category.color.split(" ")[1].replace("to-", "")})`,
+                backgroundImage: `linear-gradient(to right, ${category.color
+                  .split(" ")[0]
+                  .replace("from-", "")}, ${category.color
+                  .split(" ")[1]
+                  .replace("to-", "")})`,
               }}
             >
               {category.name}
@@ -244,15 +292,26 @@ export function HottestNews() {
         </TabsList>
 
         {CATEGORIES.map((category) => (
-          <TabsContent key={category.id} value={category.id} className="mt-0 space-y-8">
+          <TabsContent
+            key={category.id}
+            value={category.id}
+            className="mt-0 space-y-8"
+          >
             {category.articles.map((article) => (
-              <Card key={article.id} className="bg-zinc-900/50 border-zinc-800 overflow-hidden">
+              <Card
+                key={article.id}
+                className="bg-zinc-900/50 border-zinc-800 overflow-hidden"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
                   <div className="space-y-4">
                     <Badge
                       className="bg-gradient-to-r text-black"
                       style={{
-                        backgroundImage: `linear-gradient(to right, ${category.color.split(" ")[0].replace("from-", "")}, ${category.color.split(" ")[1].replace("to-", "")})`,
+                        backgroundImage: `linear-gradient(to right, ${category.color
+                          .split(" ")[0]
+                          .replace("from-", "")}, ${category.color
+                          .split(" ")[1]
+                          .replace("to-", "")})`,
                       }}
                     >
                       {category.name}
@@ -288,31 +347,48 @@ export function HottestNews() {
                         {article.summary.split(" ").map((word, i) => {
                           const isKeyword = article.keywords.some(
                             (keyword) =>
-                              keyword.toLowerCase().includes(word.toLowerCase()) ||
-                              word.toLowerCase().includes(keyword.toLowerCase()),
-                          )
+                              keyword
+                                .toLowerCase()
+                                .includes(word.toLowerCase()) ||
+                              word.toLowerCase().includes(keyword.toLowerCase())
+                          );
                           return (
-                            <span key={i} className={isKeyword ? "text-yellow-500 font-medium" : ""}>
+                            <span
+                              key={i}
+                              className={
+                                isKeyword ? "text-yellow-500 font-medium" : ""
+                              }
+                            >
                               {word}{" "}
                             </span>
-                          )
+                          );
                         })}
                       </p>
 
                       {expandedArticle === article.id && (
                         <div className="pt-3 border-t border-zinc-800 mt-3">
-                          <h5 className="text-sm font-medium mb-2">Key Entities</h5>
+                          <h5 className="text-sm font-medium mb-2">
+                            Key Entities
+                          </h5>
                           <div className="flex flex-wrap gap-2">
                             {article.entities.map((entity, index) => (
                               <div
                                 key={index}
                                 className="flex items-center gap-1 px-2 py-1 rounded-full bg-zinc-800 text-zinc-300 text-xs"
                               >
-                                {entity.type === "person" && <User className="h-3 w-3 text-blue-400" />}
-                                {entity.type === "organization" && <Building className="h-3 w-3 text-green-400" />}
-                                {entity.type === "location" && <MapPin className="h-3 w-3 text-red-400" />}
+                                {entity.type === "person" && (
+                                  <User className="h-3 w-3 text-blue-400" />
+                                )}
+                                {entity.type === "organization" && (
+                                  <Building className="h-3 w-3 text-green-400" />
+                                )}
+                                {entity.type === "location" && (
+                                  <MapPin className="h-3 w-3 text-red-400" />
+                                )}
                                 <span>{entity.name}</span>
-                                <span className="text-zinc-500">({entity.count})</span>
+                                <span className="text-zinc-500">
+                                  ({entity.count})
+                                </span>
                               </div>
                             ))}
                           </div>
@@ -322,9 +398,15 @@ export function HottestNews() {
                       <Button
                         variant="link"
                         className="h-auto p-0 text-xs text-yellow-500 hover:text-yellow-400"
-                        onClick={() => setExpandedArticle(expandedArticle === article.id ? null : article.id)}
+                        onClick={() =>
+                          setExpandedArticle(
+                            expandedArticle === article.id ? null : article.id
+                          )
+                        }
                       >
-                        {expandedArticle === article.id ? "Show less" : "Show key entities"}
+                        {expandedArticle === article.id
+                          ? "Show less"
+                          : "Show key entities"}
                       </Button>
                     </div>
 
@@ -351,7 +433,11 @@ export function HottestNews() {
                     <div
                       className="absolute inset-0 bg-gradient-to-br opacity-40 mix-blend-overlay"
                       style={{
-                        backgroundImage: `linear-gradient(to bottom right, ${category.color.split(" ")[0].replace("from-", "")}, ${category.color.split(" ")[1].replace("to-", "")})`,
+                        backgroundImage: `linear-gradient(to bottom right, ${category.color
+                          .split(" ")[0]
+                          .replace("from-", "")}, ${category.color
+                          .split(" ")[1]
+                          .replace("to-", "")})`,
                       }}
                     ></div>
 
@@ -395,7 +481,10 @@ export function HottestNews() {
             ))}
 
             <div className="flex justify-center">
-              <Button variant="outline" className="border-zinc-800 hover:border-yellow-500 hover:text-yellow-500 group">
+              <Button
+                variant="outline"
+                className="border-zinc-800 hover:border-yellow-500 hover:text-yellow-500 group"
+              >
                 <span>Explore More {category.name} News</span>
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -404,7 +493,7 @@ export function HottestNews() {
         ))}
       </Tabs>
     </section>
-  )
+  );
 }
 
 function SentimentBadge({ sentiment }) {
@@ -414,20 +503,20 @@ function SentimentBadge({ sentiment }) {
         <Smile className="h-3 w-3" />
         <span>Positive</span>
       </div>
-    )
+    );
   } else if (sentiment === "negative") {
     return (
       <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-red-500/10 text-red-500 text-xs">
         <Frown className="h-3 w-3" />
         <span>Negative</span>
       </div>
-    )
+    );
   } else {
     return (
       <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs">
         <Meh className="h-3 w-3" />
         <span>Neutral</span>
       </div>
-    )
+    );
   }
 }

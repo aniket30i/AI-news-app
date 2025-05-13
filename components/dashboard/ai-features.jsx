@@ -1,6 +1,20 @@
-import { Sparkles, Zap, Lightbulb, Headphones, Languages, Clock, Palette, Brain } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import {
+  Sparkles,
+  Zap,
+  Lightbulb,
+  Headphones,
+  Languages,
+  Clock,
+  Palette,
+  Brain,
+} from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/landing/card";
+import { Button } from "@/components/ui/button";
 
 export function AiFeatures() {
   return (
@@ -31,7 +45,12 @@ export function AiFeatures() {
             description="Translate articles to your language"
             active={false}
           />
-          <FeatureCard icon={Clock} title="Reading Time" description="Estimated time to read articles" active={true} />
+          <FeatureCard
+            icon={Clock}
+            title="Reading Time"
+            description="Estimated time to read articles"
+            active={true}
+          />
           <FeatureCard
             icon={Palette}
             title="Theme Customizer"
@@ -49,10 +68,13 @@ export function AiFeatures() {
         <div className="rounded-lg border border-yellow-500/20 bg-gradient-to-br from-yellow-500/10 to-amber-600/5 p-3">
           <div className="flex items-center gap-2 mb-2">
             <Zap className="h-4 w-4 text-yellow-500" />
-            <h4 className="font-medium text-sm text-yellow-500">Upgrade to Premium</h4>
+            <h4 className="font-medium text-sm text-yellow-500">
+              Upgrade to Premium
+            </h4>
           </div>
           <p className="text-xs text-zinc-400 mb-3">
-            Unlock all AI features and get unlimited article summaries with our premium plan.
+            Unlock all AI features and get unlimited article summaries with our
+            premium plan.
           </p>
           <Button
             size="sm"
@@ -63,19 +85,29 @@ export function AiFeatures() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 function FeatureCard({ icon: Icon, title, description, active }) {
   return (
     <div
       className={`rounded-lg border p-3 flex flex-col ${
-        active ? "border-yellow-500/20 bg-yellow-500/5" : "border-zinc-800 bg-zinc-900/30"
+        active
+          ? "border-yellow-500/20 bg-yellow-500/5"
+          : "border-zinc-800 bg-zinc-900/30"
       }`}
     >
       <div className="flex items-center gap-2 mb-2">
-        <Icon className={`h-4 w-4 ${active ? "text-yellow-500" : "text-zinc-500"}`} />
-        <h3 className={`text-sm font-medium ${active ? "text-yellow-500" : "text-zinc-300"}`}>{title}</h3>
+        <Icon
+          className={`h-4 w-4 ${active ? "text-yellow-500" : "text-zinc-500"}`}
+        />
+        <h3
+          className={`text-sm font-medium ${
+            active ? "text-yellow-500" : "text-zinc-300"
+          }`}
+        >
+          {title}
+        </h3>
       </div>
       <p className="text-xs text-zinc-400">{description}</p>
       {!active && (
@@ -86,5 +118,5 @@ function FeatureCard({ icon: Icon, title, description, active }) {
         </div>
       )}
     </div>
-  )
+  );
 }

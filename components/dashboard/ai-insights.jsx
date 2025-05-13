@@ -1,6 +1,20 @@
-import { Sparkles, Zap, BarChart3, Lightbulb, Languages, Brain, TrendingUp, Layers } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import {
+  Sparkles,
+  Zap,
+  BarChart3,
+  Lightbulb,
+  Languages,
+  Brain,
+  TrendingUp,
+  Layers,
+} from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/landing/card";
+import { Button } from "@/components/ui/button";
 
 export function AiInsights() {
   return (
@@ -75,7 +89,10 @@ export function AiInsights() {
             </div>
           </div>
 
-          <Button variant="link" className="h-auto p-0 text-xs text-yellow-500 hover:text-yellow-400">
+          <Button
+            variant="link"
+            className="h-auto p-0 text-xs text-yellow-500 hover:text-yellow-400"
+          >
             View all trending topics
           </Button>
         </div>
@@ -83,10 +100,13 @@ export function AiInsights() {
         <div className="rounded-lg border border-yellow-500/20 bg-gradient-to-br from-yellow-500/10 to-amber-600/5 p-4">
           <div className="flex items-center gap-2 mb-2">
             <Lightbulb className="h-4 w-4 text-yellow-500" />
-            <h4 className="font-medium text-sm text-yellow-500">Content Recommendations</h4>
+            <h4 className="font-medium text-sm text-yellow-500">
+              Content Recommendations
+            </h4>
           </div>
           <p className="text-xs text-zinc-400 mb-3">
-            Our AI has analyzed your reading patterns and found these topics might interest you:
+            Our AI has analyzed your reading patterns and found these topics
+            might interest you:
           </p>
           <div className="space-y-2 mb-3">
             <div className="flex items-center gap-2 text-sm">
@@ -112,5 +132,5 @@ export function AiInsights() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

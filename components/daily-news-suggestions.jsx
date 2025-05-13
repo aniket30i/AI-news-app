@@ -8,8 +8,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+} from "@/components/ui/landing/card";
+import { Badge } from "@/components/ui/landing/badge";
 import {
   Clock,
   ThumbsUp,
@@ -18,7 +18,7 @@ import {
   ArrowRight,
   Newspaper,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/landing/button";
 
 const NEWS_ITEMS = [
   {

@@ -1,10 +1,15 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Card, CardContent, CardDescription, CardFooter } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Globe, ArrowRight, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+} from "@/components/ui/landing/card";
+import { Badge } from "@/components/ui/badge";
+import { Globe, ArrowRight, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const FOREIGN_NEWS = [
   {
@@ -29,29 +34,29 @@ const FOREIGN_NEWS = [
     source: "Tokyo Tech Review",
     gradient: "from-emerald-400 via-teal-500 to-cyan-600",
   },
-]
+];
 
 export function ForeignNews() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
+          setIsVisible(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
-    const element = document.getElementById("foreign-news-section")
-    if (element) observer.observe(element)
+    const element = document.getElementById("foreign-news-section");
+    if (element) observer.observe(element);
 
     return () => {
-      if (element) observer.unobserve(element)
-    }
-  }, [])
+      if (element) observer.unobserve(element);
+    };
+  }, []);
 
   return (
     <section id="foreign-news-section" className="py-16 md:py-20 relative">
@@ -87,7 +92,9 @@ export function ForeignNews() {
             <h2 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
               Global Perspective
             </h2>
-            <p className="text-zinc-300">Stay informed with important news from around the world</p>
+            <p className="text-zinc-300">
+              Stay informed with important news from around the world
+            </p>
           </div>
         </div>
 
@@ -124,13 +131,19 @@ export function ForeignNews() {
                   <div
                     className="absolute inset-0 bg-gradient-to-br opacity-30 transition-opacity duration-300 group-hover:opacity-50 mix-blend-overlay"
                     style={{
-                      backgroundImage: `linear-gradient(to bottom right, ${item.gradient.split(" ")[0].replace("from-", "")}, ${item.gradient.split(" ")[2].replace("to-", "")})`,
+                      backgroundImage: `linear-gradient(to bottom right, ${item.gradient
+                        .split(" ")[0]
+                        .replace("from-", "")}, ${item.gradient
+                        .split(" ")[2]
+                        .replace("to-", "")})`,
                     }}
                   ></div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <div className="flex items-center gap-2 mb-2">
-                      <Badge className="bg-gradient-to-r from-yellow-400 to-amber-600 text-black">{item.region}</Badge>
+                      <Badge className="bg-gradient-to-r from-yellow-400 to-amber-600 text-black">
+                        {item.region}
+                      </Badge>
                       <div className="flex items-center gap-1 text-xs text-zinc-400">
                         <MapPin size={12} className="text-yellow-500" />
                         {item.country}
@@ -153,7 +166,9 @@ export function ForeignNews() {
                     <span>•</span>
                     <span className="text-yellow-500">{item.region}</span>
                   </div>
-                  <CardDescription className="text-base text-zinc-300">{item.description}</CardDescription>
+                  <CardDescription className="text-base text-zinc-300">
+                    {item.description}
+                  </CardDescription>
                 </CardContent>
 
                 <CardFooter className="p-6 pt-0">
@@ -177,5 +192,5 @@ export function ForeignNews() {
         </div>
       </div>
     </section>
-  )
+  );
 }

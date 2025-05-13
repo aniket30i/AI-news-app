@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/landing/button";
+import { Card } from "@/components/ui/landing/card";
 import { Check, Sparkles } from "lucide-react";
 
 const CATEGORIES = [
