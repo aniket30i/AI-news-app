@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/landing/button";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/landing/input";
 import {
   Facebook,
   Twitter,

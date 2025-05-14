@@ -66,6 +66,13 @@ export function Header() {
             href="#"
             className="text-sm font-medium text-zinc-400 hover:text-yellow-400 transition-colors relative group"
           >
+            Pricing
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600 transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link
+            href="#"
+            className="text-sm font-medium text-zinc-400 hover:text-yellow-400 transition-colors relative group"
+          >
             About
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600 transition-all duration-300 group-hover:w-full"></span>
           </Link>
@@ -123,6 +130,12 @@ export function Header() {
               className="text-sm font-medium text-zinc-400 hover:text-yellow-400"
             >
               Categories
+            </Link>
+            <Link
+              href="#"
+              className="text-sm font-medium text-zinc-400 hover:text-yellow-400"
+            >
+              Pricing
             </Link>
             <Link
               href="#"

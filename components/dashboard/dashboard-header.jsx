@@ -11,7 +11,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/landing/button";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/landing/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
