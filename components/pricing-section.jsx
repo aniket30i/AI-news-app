@@ -239,7 +239,7 @@ export default function PricingSection() {
           </div>
         </div>
 
-        <div
+        {/* <div
           className={`mt-16 max-w-3xl mx-auto text-center transition-all duration-1000 transform ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
@@ -257,8 +257,12 @@ export default function PricingSection() {
               Start Free Trial
             </Button>
           </div>
+        </div> */}
+        <div className="mt-16 text-center text-3xl font-bold">
+          <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
+            What our users are saying...
+          </span>
         </div>
-
         <div
           className={`mt-16 max-w-4xl mx-auto grid md:grid-cols-3 gap-6 transition-all duration-1000 transform ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
@@ -329,14 +333,16 @@ function TestimonialCard({ quote, author, role }) {
           />
         ))}
       </div>
-      <p className="text-zinc-300 mb-4 italic">"{quote}"</p>
-      <div className="flex items-center gap-3">
-        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center text-black font-bold">
-          {author.charAt(0)}
-        </div>
-        <div>
-          <p className="font-medium">{author}</p>
-          <p className="text-sm text-zinc-500">{role}</p>
+      <div className="flex flex-col justify-between h-[85%]">
+        <p className="text-zinc-300 mb-4 italic">"{quote}"</p>
+        <div className="flex items-center gap-3">
+          <div className="h-10 w-10 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center text-black font-bold">
+            {author.charAt(0)}
+          </div>
+          <div>
+            <p className="font-medium">{author}</p>
+            <p className="text-sm text-zinc-500">{role}</p>
+          </div>
         </div>
       </div>
     </div>

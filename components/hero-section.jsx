@@ -113,7 +113,7 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-amber-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="w-full h-full rounded-xl overflow-hidden relative">
               <img
-                src="/placeholder.svg?height=500&width=500"
+                src="/LandingPageImages/hero-oneo.jpg"
                 alt="AI News Curation"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
