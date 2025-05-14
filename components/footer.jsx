@@ -11,6 +11,7 @@ import {
   Linkedin,
   Github,
   Send,
+  Zap,
 } from "lucide-react";
 
 export function Footer() {
@@ -56,11 +57,14 @@ export function Footer() {
               <div className="relative">
                 <div className="h-10 w-10 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 group-hover:animate-pulse"></div>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 blur-lg opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <Zap className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black h-5 w-5" />
               </div>
+
               <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent group-hover:from-yellow-300 group-hover:to-amber-500 transition-all">
-                NewsAI
+                Newsyn
               </span>
             </Link>
+
             <p className="mt-4 text-zinc-300">
               AI-powered news curation platform that delivers personalized
               content based on your interests and preferences.
@@ -172,7 +176,7 @@ export function Footer() {
           }`}
         >
           <p className="text-sm text-zinc-500">
-            © {new Date().getFullYear()} NewsAI. All rights reserved.
+            © {new Date().getFullYear()} Newsyn. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(

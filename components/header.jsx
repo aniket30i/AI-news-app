@@ -33,8 +33,8 @@ export function Header() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-amber-600 blur-lg opacity-50 group-hover:opacity-70 transition-opacity"></div>
               <Zap className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black h-5 w-5" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent group-hover:from-yellow-300 group-hover:to-amber-500 transition-all">
-              The CuratorAI
+            <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent group-hover:from-yellow-300 group-hover:to-amber-500 transition-all">
+              Newsyn
             </span>
           </Link>
         </div>
