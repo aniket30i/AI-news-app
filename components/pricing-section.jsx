@@ -13,7 +13,7 @@ import {
   Headphones,
   Star,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/landing/button";
 
 export default function PricingSection() {
   const [isVisible, setIsVisible] = useState(false);

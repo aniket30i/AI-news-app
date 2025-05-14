@@ -1,10 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Bell, Search, Settings, User, ChevronDown, Menu, Zap } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { useState } from "react";
+import {
+  Bell,
+  Search,
+  Settings,
+  User,
+  ChevronDown,
+  Menu,
+  Zap,
+} from "lucide-react";
+import { Button } from "@/components/ui/landing/button";
+import { Input } from "@/components/ui/input";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,10 +20,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 
 export function DashboardHeader() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <header className="border-b border-zinc-800 bg-black/80 backdrop-blur-md sticky top-0 z-40">
@@ -42,13 +50,22 @@ export function DashboardHeader() {
           </div>
 
           <nav className="hidden md:flex items-center ml-8">
-            <Button variant="ghost" className="text-zinc-400 hover:text-yellow-400">
+            <Button
+              variant="ghost"
+              className="text-zinc-400 hover:text-yellow-400"
+            >
               Dashboard
             </Button>
-            <Button variant="ghost" className="text-zinc-400 hover:text-yellow-400">
+            <Button
+              variant="ghost"
+              className="text-zinc-400 hover:text-yellow-400"
+            >
               Discover
             </Button>
-            <Button variant="ghost" className="text-zinc-400 hover:text-yellow-400">
+            <Button
+              variant="ghost"
+              className="text-zinc-400 hover:text-yellow-400"
+            >
               Saved
             </Button>
           </nav>
@@ -70,9 +87,15 @@ export function DashboardHeader() {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative h-8 flex items-center gap-2 px-2">
+              <Button
+                variant="ghost"
+                className="relative h-8 flex items-center gap-2 px-2"
+              >
                 <Avatar className="h-8 w-8">
-                  <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
+                  <AvatarImage
+                    src="/placeholder.svg?height=32&width=32"
+                    alt="User"
+                  />
                   <AvatarFallback className="bg-gradient-to-br from-yellow-400 to-amber-600 text-black">
                     JD
                   </AvatarFallback>
@@ -84,7 +107,10 @@ export function DashboardHeader() {
                 <ChevronDown className="h-4 w-4 text-zinc-500" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56 bg-zinc-900 border-zinc-800">
+            <DropdownMenuContent
+              align="end"
+              className="w-56 bg-zinc-900 border-zinc-800"
+            >
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator className="bg-zinc-800" />
               <DropdownMenuItem className="hover:bg-zinc-800 focus:bg-zinc-800 cursor-pointer">
@@ -115,18 +141,27 @@ export function DashboardHeader() {
             />
           </div>
           <nav className="flex flex-col space-y-2">
-            <Button variant="ghost" className="justify-start text-zinc-400 hover:text-yellow-400">
+            <Button
+              variant="ghost"
+              className="justify-start text-zinc-400 hover:text-yellow-400"
+            >
               Dashboard
             </Button>
-            <Button variant="ghost" className="justify-start text-zinc-400 hover:text-yellow-400">
+            <Button
+              variant="ghost"
+              className="justify-start text-zinc-400 hover:text-yellow-400"
+            >
               Discover
             </Button>
-            <Button variant="ghost" className="justify-start text-zinc-400 hover:text-yellow-400">
+            <Button
+              variant="ghost"
+              className="justify-start text-zinc-400 hover:text-yellow-400"
+            >
               Saved
             </Button>
           </nav>
         </div>
       )}
     </header>
-  )
+  );
 }

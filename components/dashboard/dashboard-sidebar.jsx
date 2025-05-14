@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
+import { useState } from "react";
+import Link from "next/link";
 import {
   Home,
   Newspaper,
@@ -16,16 +16,16 @@ import {
   Globe,
   TrendingUp,
   ChevronRight,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
+} from "lucide-react";
+import { Button } from "@/components/ui/landing/button";
+import { ScrollArea } from "@/components/ui/landing/scroll-area";
 
 export function DashboardSidebar() {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div
@@ -34,7 +34,10 @@ export function DashboardSidebar() {
       }`}
     >
       <div className="h-16 border-b border-zinc-800 flex items-center justify-between px-4">
-        <Link href="/dashboard" className={`flex items-center gap-2 ${!isOpen && "justify-center"}`}>
+        <Link
+          href="/dashboard"
+          className={`flex items-center gap-2 ${!isOpen && "justify-center"}`}
+        >
           <div className="relative">
             <div className="h-8 w-8 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600"></div>
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 blur-sm opacity-50"></div>
@@ -46,8 +49,17 @@ export function DashboardSidebar() {
             </span>
           )}
         </Link>
-        <Button variant="ghost" size="icon" onClick={toggleSidebar} className="text-zinc-400">
-          <ChevronRight className={`h-5 w-5 transition-transform ${!isOpen && "rotate-180"}`} />
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={toggleSidebar}
+          className="text-zinc-400"
+        >
+          <ChevronRight
+            className={`h-5 w-5 transition-transform ${
+              !isOpen && "rotate-180"
+            }`}
+          />
         </Button>
       </div>
 
@@ -64,12 +76,30 @@ export function DashboardSidebar() {
 
           {isOpen && (
             <div className="space-y-2">
-              <h4 className="text-xs uppercase text-zinc-500 font-semibold px-2">Categories</h4>
+              <h4 className="text-xs uppercase text-zinc-500 font-semibold px-2">
+                Categories
+              </h4>
               <div className="space-y-1">
-                <CategoryItem label="Technology" color="bg-blue-500" isOpen={isOpen} />
-                <CategoryItem label="Business" color="bg-green-500" isOpen={isOpen} />
-                <CategoryItem label="Science" color="bg-purple-500" isOpen={isOpen} />
-                <CategoryItem label="Health" color="bg-red-500" isOpen={isOpen} />
+                <CategoryItem
+                  label="Technology"
+                  color="bg-blue-500"
+                  isOpen={isOpen}
+                />
+                <CategoryItem
+                  label="Business"
+                  color="bg-green-500"
+                  isOpen={isOpen}
+                />
+                <CategoryItem
+                  label="Science"
+                  color="bg-purple-500"
+                  isOpen={isOpen}
+                />
+                <CategoryItem
+                  label="Health"
+                  color="bg-red-500"
+                  isOpen={isOpen}
+                />
               </div>
             </div>
           )}
@@ -78,9 +108,13 @@ export function DashboardSidebar() {
             <div className="rounded-lg border border-yellow-500/20 bg-gradient-to-br from-yellow-500/10 to-amber-600/5 p-3">
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="h-4 w-4 text-yellow-500" />
-                <h4 className="font-medium text-sm text-yellow-500">AI Assistant</h4>
+                <h4 className="font-medium text-sm text-yellow-500">
+                  AI Assistant
+                </h4>
               </div>
-              <p className="text-xs text-zinc-400 mb-3">Get personalized news recommendations with our AI assistant.</p>
+              <p className="text-xs text-zinc-400 mb-3">
+                Get personalized news recommendations with our AI assistant.
+              </p>
               <Button
                 size="sm"
                 className="w-full bg-gradient-to-r from-yellow-400 to-amber-600 hover:from-yellow-500 hover:to-amber-700 text-black text-xs"
@@ -101,7 +135,7 @@ export function DashboardSidebar() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function NavItem({ icon: Icon, label, isOpen, isActive }) {
@@ -109,13 +143,15 @@ function NavItem({ icon: Icon, label, isOpen, isActive }) {
     <Link
       href="#"
       className={`flex items-center gap-3 px-2 py-2 rounded-md text-sm ${
-        isActive ? "bg-yellow-500/10 text-yellow-500" : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+        isActive
+          ? "bg-yellow-500/10 text-yellow-500"
+          : "text-zinc-400 hover:text-white hover:bg-zinc-900"
       } transition-colors ${!isOpen && "justify-center"}`}
     >
       <Icon className="h-5 w-5 flex-shrink-0" />
       {isOpen && <span>{label}</span>}
     </Link>
-  )
+  );
 }
 
 function CategoryItem({ label, color, isOpen }) {
@@ -127,5 +163,5 @@ function CategoryItem({ label, color, isOpen }) {
       <span className={`h-2 w-2 rounded-full ${color}`}></span>
       {isOpen && <span>{label}</span>}
     </Link>
-  )
+  );
 }

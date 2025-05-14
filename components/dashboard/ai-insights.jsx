@@ -14,7 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/landing/card";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/landing/button";
 
 export function AiInsights() {
   return (

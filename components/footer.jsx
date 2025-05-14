@@ -1,32 +1,39 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Facebook, Twitter, Instagram, Linkedin, Github, Send } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/landing/button";
+import { Input } from "@/components/ui/input";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Github,
+  Send,
+} from "lucide-react";
 
 export function Footer() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
+          setIsVisible(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
-    const element = document.getElementById("footer-section")
-    if (element) observer.observe(element)
+    const element = document.getElementById("footer-section");
+    if (element) observer.observe(element);
 
     return () => {
-      if (element) observer.unobserve(element)
-    }
-  }, [])
+      if (element) observer.unobserve(element);
+    };
+  }, []);
 
   return (
     <footer id="footer-section" className="relative">
@@ -55,8 +62,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-zinc-300">
-              AI-powered news curation platform that delivers personalized content based on your interests and
-              preferences.
+              AI-powered news curation platform that delivers personalized
+              content based on your interests and preferences.
             </p>
             <div className="flex gap-4 mt-6">
               {[
@@ -88,14 +95,22 @@ export function Footer() {
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600"></span>
             </h3>
             <ul className="space-y-3">
-              {["Home", "About Us", "Features", "Pricing", "Contact"].map((item, index) => (
-                <li key={item} style={{ transitionDelay: `${index * 100}ms` }}>
-                  <Link href="#" className="text-zinc-400 hover:text-yellow-400 transition-colors relative group">
-                    {item}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600 transition-all duration-300 group-hover:w-full"></span>
-                  </Link>
-                </li>
-              ))}
+              {["Home", "About Us", "Features", "Pricing", "Contact"].map(
+                (item, index) => (
+                  <li
+                    key={item}
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
+                    <Link
+                      href="#"
+                      className="text-zinc-400 hover:text-yellow-400 transition-colors relative group"
+                    >
+                      {item}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600 transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -105,9 +120,18 @@ export function Footer() {
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600"></span>
             </h3>
             <ul className="space-y-3">
-              {["Technology", "Business", "Science", "Health", "Entertainment"].map((item, index) => (
+              {[
+                "Technology",
+                "Business",
+                "Science",
+                "Health",
+                "Entertainment",
+              ].map((item, index) => (
                 <li key={item} style={{ transitionDelay: `${index * 100}ms` }}>
-                  <Link href="#" className="text-zinc-400 hover:text-yellow-400 transition-colors relative group">
+                  <Link
+                    href="#"
+                    className="text-zinc-400 hover:text-yellow-400 transition-colors relative group"
+                  >
                     {item}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600 transition-all duration-300 group-hover:w-full"></span>
                   </Link>
@@ -121,7 +145,9 @@ export function Footer() {
               Subscribe
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600"></span>
             </h3>
-            <p className="text-zinc-300 mb-4">Get the latest news and updates delivered to your inbox.</p>
+            <p className="text-zinc-300 mb-4">
+              Get the latest news and updates delivered to your inbox.
+            </p>
             <div className="flex flex-col gap-2">
               <div className="relative">
                 <Input
@@ -133,7 +159,9 @@ export function Footer() {
                   <Send size={16} />
                 </Button>
               </div>
-              <div className="text-xs text-zinc-500 mt-1">We respect your privacy. Unsubscribe at any time.</div>
+              <div className="text-xs text-zinc-500 mt-1">
+                We respect your privacy. Unsubscribe at any time.
+              </div>
             </div>
           </div>
         </div>
@@ -143,21 +171,25 @@ export function Footer() {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <p className="text-sm text-zinc-500">© {new Date().getFullYear()} NewsAI. All rights reserved.</p>
+          <p className="text-sm text-zinc-500">
+            © {new Date().getFullYear()} NewsAI. All rights reserved.
+          </p>
           <div className="flex gap-6">
-            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item, index) => (
-              <Link
-                key={item}
-                href="#"
-                className="text-sm text-zinc-500 hover:text-yellow-400 transition-colors relative group"
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
+            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
+              (item, index) => (
+                <Link
+                  key={item}
+                  href="#"
+                  className="text-sm text-zinc-500 hover:text-yellow-400 transition-colors relative group"
+                >
+                  {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600 transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              )
+            )}
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

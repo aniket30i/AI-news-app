@@ -7,9 +7,9 @@ import {
   CardDescription,
   CardFooter,
 } from "@/components/ui/landing/card";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/landing/badge";
 import { Globe, ArrowRight, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/landing/button";
 
 const FOREIGN_NEWS = [
   {

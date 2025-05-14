@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Search, Zap } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/landing/button";
+import { Menu, X, Search, Zap } from "lucide-react";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
@@ -72,7 +72,11 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="text-zinc-400 hover:text-yellow-400 relative group">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-zinc-400 hover:text-yellow-400 relative group"
+          >
             <Search size={20} />
             <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-600 transition-all duration-300 group-hover:w-full"></span>
           </Button>
@@ -102,16 +106,28 @@ export function Header() {
       {isMenuOpen && (
         <div className="md:hidden container py-4 pb-6 border-t border-yellow-500/20 bg-black/95 backdrop-blur-lg">
           <nav className="flex flex-col gap-4">
-            <Link href="/" className="text-sm font-medium text-zinc-400 hover:text-yellow-400">
+            <Link
+              href="/"
+              className="text-sm font-medium text-zinc-400 hover:text-yellow-400"
+            >
               Home
             </Link>
-            <Link href="#" className="text-sm font-medium text-zinc-400 hover:text-yellow-400">
+            <Link
+              href="#"
+              className="text-sm font-medium text-zinc-400 hover:text-yellow-400"
+            >
               Discover
             </Link>
-            <Link href="#" className="text-sm font-medium text-zinc-400 hover:text-yellow-400">
+            <Link
+              href="#"
+              className="text-sm font-medium text-zinc-400 hover:text-yellow-400"
+            >
               Categories
             </Link>
-            <Link href="#" className="text-sm font-medium text-zinc-400 hover:text-yellow-400">
+            <Link
+              href="#"
+              className="text-sm font-medium text-zinc-400 hover:text-yellow-400"
+            >
               About
             </Link>
             <div className="flex flex-col gap-2 mt-2">
@@ -129,5 +145,5 @@ export function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }

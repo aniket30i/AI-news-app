@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import { OrbitControls, Environment, Text, Float, Sparkles } from "@react-three/drei"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/landing/button"
 import { Newspaper, TrendingUp } from "lucide-react"
 import * as THREE from "three"
 

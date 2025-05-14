@@ -17,7 +17,7 @@ import {
   Building,
   MapPin,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/landing/button";
 import { Card } from "@/components/ui/landing/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Sparkles, ArrowRight } from "lucide-react"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/landing/button";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 export function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
@@ -63,7 +63,14 @@ export function HeroSection() {
                   strokeDasharray="1 14"
                 />
                 <defs>
-                  <linearGradient id="paint0_linear" x1="0" y1="3" x2="400" y2="3" gradientUnits="userSpaceOnUse">
+                  <linearGradient
+                    id="paint0_linear"
+                    x1="0"
+                    y1="3"
+                    x2="400"
+                    y2="3"
+                    gradientUnits="userSpaceOnUse"
+                  >
                     <stop stopColor="#FACC15" />
                     <stop offset="0.5" stopColor="#EAB308" />
                     <stop offset="1" stopColor="#D97706" />
@@ -73,14 +80,18 @@ export function HeroSection() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-zinc-300 max-w-[600px] leading-relaxed">
-            Get personalized news recommendations based on your interests. Our AI analyzes thousands of sources to bring
-            you the most relevant stories from around the world.
+            Get personalized news recommendations based on your interests. Our
+            AI analyzes thousands of sources to bring you the most relevant
+            stories from around the world.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
             <Button className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600 hover:from-yellow-300 hover:to-amber-500 text-black relative group overflow-hidden">
               <span className="relative z-10 flex items-center gap-1">
                 Get Started
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
               </span>
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </Button>
@@ -140,5 +151,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
